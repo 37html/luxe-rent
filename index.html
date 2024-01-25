@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,600;8..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+  <title>Webpack</title>
+<script defer src="main.3e399a80188fa3c015cb.js"></script></head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__wrapper">
+        <div class="header__items">
+          <div class="header__item header__item-nav">
+            <a class="header__logo-link" href="">LuxeRent</a>
+            <nav class="header__menu">
+              <ul class="header__menu-list">
+                <li class="header__menu-item">
+                  <a class="header__menu-item-link header__menu-link-tomain" href="#">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7 11.6621C7 12.0039 7.12695 12.2969 7.40039 12.5508L14.998 19.9922C15.2129 20.207 15.4863 20.3242 15.8086 20.3242C16.4531 20.3242 16.9707 19.8164 16.9707 19.1621C16.9707 18.8398 16.834 18.5566 16.6191 18.332L9.77344 11.6621L16.6191 4.99219C16.834 4.76758 16.9707 4.47461 16.9707 4.16211C16.9707 3.50781 16.4531 3 15.8086 3C15.4863 3 15.2129 3.11719 14.998 3.33203L7.40039 10.7637C7.12695 11.0273 7 11.3203 7 11.6621Z" fill="#9EA9B7"/>
+                    </svg>
+                    <span>На главную</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header__item">
+            <button class="header__login-btn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM15 10C15 11.6569 13.6569 13 12 13C10.3431 13 9 11.6569 9 10C9 8.34315 10.3431 7 12 7C13.6569 7 15 8.34315 15 10ZM12 20.5C13.784 20.5 15.4397 19.9504 16.8069 19.0112C17.4108 18.5964 17.6688 17.8062 17.3178 17.1632C16.59 15.8303 15.0902 15 11.9999 15C8.90969 15 7.40997 15.8302 6.68214 17.1632C6.33105 17.8062 6.5891 18.5963 7.19296 19.0111C8.56018 19.9503 10.2159 20.5 12 20.5Z" fill="#0C131D"/>
+              </svg>
+              <span>Профиль</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="top">
+      <img class="top__bg" src="assets/top-bg.jpg" alt="">
+      <div class="container">
+        <div class="top__wrapper">
+          <h1 class="top__title">Поиск элитной недвижимости в пару кликов</h1>
+          <form action="" class="form">
+            <div class="top__inputs-box">
+              <label class="top__input-label top__input-label-place" for="">
+                <input type="text" class="top__input top__input-place" required>
+                <span class="top__input-text">Куда</span>
+              </label>
+              <label class="top__input-label" for="">
+                <input type="text" class="top__input top__input-date-1" required>
+                <span class="top__input-text top__input-text-2">Прибытие</span>
+              </label>
+              <label class="top__input-label" for="">
+                <input type="text" class="top__input top__input-date-2" required>
+                <span class="top__input-text">Отъезд</span>
+              </label>
+              <label class="top__input-label" for="">
+                <input type="text" class="top__input top__input-users" required>
+                <span class="top__input-text">Кто едет</span>
+              </label>
+              <button class="top__btn green-btn">Подобрать</button>
+            </div>
+          </form>
+          <img class="top__arrow-down" src="assets/arrow-down.svg" alt="">
+        </div>
+      </div>
+    </section>
+    <section class="offers">
+      <div class="container">
+        <div class="offers__wrapper">
+          <div class="offers__top">
+            <h2 class="offers__title">Предложения для вас</h2>
+            <div class="offers__filters-box">
+              <button class="offers__filters-btn white-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 6.5H16M6 6.5H2M22 17.5H18M8 17.5H2M10 10C10.4596 10 10.9148 9.90947 11.3394 9.73358C11.764 9.55769 12.1499 9.29988 12.4749 8.97487C12.7999 8.64987 13.0577 8.26403 13.2336 7.83939C13.4095 7.41475 13.5 6.95963 13.5 6.5C13.5 6.04037 13.4095 5.58525 13.2336 5.16061C13.0577 4.73597 12.7999 4.35013 12.4749 4.02513C12.1499 3.70012 11.764 3.44231 11.3394 3.26642C10.9148 3.09053 10.4596 3 10 3C9.07174 3 8.1815 3.36875 7.52513 4.02513C6.86875 4.6815 6.5 5.57174 6.5 6.5C6.5 7.42826 6.86875 8.3185 7.52513 8.97487C8.1815 9.63125 9.07174 10 10 10ZM14 21C14.9283 21 15.8185 20.6313 16.4749 19.9749C17.1313 19.3185 17.5 18.4283 17.5 17.5C17.5 16.5717 17.1313 15.6815 16.4749 15.0251C15.8185 14.3687 14.9283 14 14 14C13.0717 14 12.1815 14.3687 11.5251 15.0251C10.8687 15.6815 10.5 16.5717 10.5 17.5C10.5 18.4283 10.8687 19.3185 11.5251 19.9749C12.1815 20.6313 13.0717 21 14 21Z" stroke="#0C131D" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Фильтры</span>
+              </button>
+              <button class="offers__sorting-btn white-btn">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.45001 4.72L4.73001 1M4.73001 1L1.01001 4.72M4.73001 1V19M11.55 15.28L15.27 19M15.27 19L18.99 15.28M15.27 19V1" stroke="#0C131D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Сортировка</span>
+              </button>
+            </div>
+          </div>
+          <div class="offers__cards">
+            <div class="offers__card">
+              <a class="offers__card-link" href="">
+                <div class="offers__card-img-box">
+                  <img class="offers__card-img" src="assets/1.jpg" alt="">
+                </div>
+                <div class="offers__card-info">
+                  <p class="offers__card-name">Домик у озера</p>
+                  <div class="offers__card-rating-box">
+                    <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.02229 2.04591C6.16748 1.57607 6.83252 1.57607 6.97771 2.04591L7.92555 5.11318C7.99029 5.32268 8.18398 5.46556 8.40326 5.46556H11.5219C12.0001 5.46556 12.2054 6.07255 11.8254 6.36289L9.25993 8.32272C9.09342 8.44992 9.02388 8.66746 9.08575 8.86767L10.0554 12.0054C10.1991 12.4705 9.66097 12.8459 9.27412 12.5504L6.80353 10.663C6.62433 10.5261 6.37567 10.5261 6.19647 10.663L3.72588 12.5504C3.33903 12.8459 2.80091 12.4705 2.94463 12.0054L3.91425 8.86767C3.97611 8.66746 3.90658 8.44992 3.74007 8.32272L1.17462 6.36289C0.794561 6.07255 0.999881 5.46556 1.47815 5.46556H4.59674C4.81602 5.46556 5.00971 5.32268 5.07445 5.11318L6.02229 2.04591Z" fill="#F4AE43"/>
+                    </svg>
+                    <div class="offers__card-rating-num">4.8</div>
+                    <div class="offers__card-rating-count-review">(30 отзывов)</div>
+                  </div>
+                  <div class="offers__card-cost-inner">
+                    <div class="offers__card-city-box">
+                      <img class="offers__card-city-icon" src="assets/spin.svg" alt="">
+                      <span>Приозерск</span>
+                    </div>
+                    <div class="offers__card-cost-box">
+                      15 300р./
+                      <span>за ночь</span>
+                    </div>
+                  </div>
+                  <div class="offers__card-arrow">
+                    <svg class="offers__card-arrow-icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.3848 0.999989C20.3848 0.447705 19.9371 -1.0632e-05 19.3848 -1.08849e-05L10.3848 -1.00841e-05C9.83249 -1.04213e-05 9.38478 0.447705 9.38478 0.99999C9.38478 1.55227 9.83249 1.99999 10.3848 1.99999L18.3848 1.99999L18.3848 9.99999C18.3848 10.5523 18.8325 11 19.3848 11C19.9371 11 20.3848 10.5523 20.3848 9.99999L20.3848 0.999989ZM1.70711 20.0919L20.0919 1.7071L18.6777 0.292883L0.292893 18.6777L1.70711 20.0919Z" fill="#0C131D"/>
+                    </svg>
+                  </div>
+                  <div class="offers__card-like">
+                    <svg class="offers__card-like-icon" width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.85 15.9543C9.56666 16.0543 9.1 16.0543 8.81667 15.9543C6.4 15.1293 1 11.6876 1 5.85432C1 3.27932 3.075 1.19598 5.63333 1.19598C7.15 1.19598 8.49167 1.92932 9.33333 3.06265C9.76148 2.48421 10.3191 2.01409 10.9617 1.68994C11.6042 1.36579 12.3137 1.19662 13.0333 1.19598C15.5917 1.19598 17.6667 3.27932 17.6667 5.85432C17.6667 11.6876 12.2667 15.1293 9.85 15.9543Z" fill="#9EA9B7" stroke="#9EA9B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="offers__card">
+              <a class="offers__card-link" href="">
+                <div class="offers__card-img-box">
+                  <img class="offers__card-img" src="assets/2.jpg" alt="">
+                </div>
+                <div class="offers__card-info">
+                  <p class="offers__card-name">Домик у озера</p>
+                  <div class="offers__card-rating-box">
+                    <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.02229 2.04591C6.16748 1.57607 6.83252 1.57607 6.97771 2.04591L7.92555 5.11318C7.99029 5.32268 8.18398 5.46556 8.40326 5.46556H11.5219C12.0001 5.46556 12.2054 6.07255 11.8254 6.36289L9.25993 8.32272C9.09342 8.44992 9.02388 8.66746 9.08575 8.86767L10.0554 12.0054C10.1991 12.4705 9.66097 12.8459 9.27412 12.5504L6.80353 10.663C6.62433 10.5261 6.37567 10.5261 6.19647 10.663L3.72588 12.5504C3.33903 12.8459 2.80091 12.4705 2.94463 12.0054L3.91425 8.86767C3.97611 8.66746 3.90658 8.44992 3.74007 8.32272L1.17462 6.36289C0.794561 6.07255 0.999881 5.46556 1.47815 5.46556H4.59674C4.81602 5.46556 5.00971 5.32268 5.07445 5.11318L6.02229 2.04591Z" fill="#F4AE43"/>
+                    </svg>
+                    <div class="offers__card-rating-num">4.8</div>
+                    <div class="offers__card-rating-count-review">(30 отзывов)</div>
+                  </div>
+                  <div class="offers__card-cost-inner">
+                    <div class="offers__card-city-box">
+                      <img class="offers__card-city-icon" src="assets/spin.svg" alt="">
+                      <span>Приозерск</span>
+                    </div>
+                    <div class="offers__card-cost-box">
+                      15 300р./
+                      <span>за ночь</span>
+                    </div>
+                  </div>
+                  <div class="offers__card-arrow">
+                    <svg class="offers__card-arrow-icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.3848 0.999989C20.3848 0.447705 19.9371 -1.0632e-05 19.3848 -1.08849e-05L10.3848 -1.00841e-05C9.83249 -1.04213e-05 9.38478 0.447705 9.38478 0.99999C9.38478 1.55227 9.83249 1.99999 10.3848 1.99999L18.3848 1.99999L18.3848 9.99999C18.3848 10.5523 18.8325 11 19.3848 11C19.9371 11 20.3848 10.5523 20.3848 9.99999L20.3848 0.999989ZM1.70711 20.0919L20.0919 1.7071L18.6777 0.292883L0.292893 18.6777L1.70711 20.0919Z" fill="#0C131D"/>
+                    </svg>
+                  </div>
+                  <div class="offers__card-like">
+                    <svg class="offers__card-like-icon" width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.85 15.9543C9.56666 16.0543 9.1 16.0543 8.81667 15.9543C6.4 15.1293 1 11.6876 1 5.85432C1 3.27932 3.075 1.19598 5.63333 1.19598C7.15 1.19598 8.49167 1.92932 9.33333 3.06265C9.76148 2.48421 10.3191 2.01409 10.9617 1.68994C11.6042 1.36579 12.3137 1.19662 13.0333 1.19598C15.5917 1.19598 17.6667 3.27932 17.6667 5.85432C17.6667 11.6876 12.2667 15.1293 9.85 15.9543Z" fill="#9EA9B7" stroke="#9EA9B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="offers__card">
+              <a class="offers__card-link" href="">
+                <div class="offers__card-img-box">
+                  <img class="offers__card-img" src="assets/3.jpg" alt="">
+                </div>
+                <div class="offers__card-info">
+                  <p class="offers__card-name">Домик у озера</p>
+                  <div class="offers__card-rating-box">
+                    <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.02229 2.04591C6.16748 1.57607 6.83252 1.57607 6.97771 2.04591L7.92555 5.11318C7.99029 5.32268 8.18398 5.46556 8.40326 5.46556H11.5219C12.0001 5.46556 12.2054 6.07255 11.8254 6.36289L9.25993 8.32272C9.09342 8.44992 9.02388 8.66746 9.08575 8.86767L10.0554 12.0054C10.1991 12.4705 9.66097 12.8459 9.27412 12.5504L6.80353 10.663C6.62433 10.5261 6.37567 10.5261 6.19647 10.663L3.72588 12.5504C3.33903 12.8459 2.80091 12.4705 2.94463 12.0054L3.91425 8.86767C3.97611 8.66746 3.90658 8.44992 3.74007 8.32272L1.17462 6.36289C0.794561 6.07255 0.999881 5.46556 1.47815 5.46556H4.59674C4.81602 5.46556 5.00971 5.32268 5.07445 5.11318L6.02229 2.04591Z" fill="#F4AE43"/>
+                    </svg>
+                    <div class="offers__card-rating-num">4.8</div>
+                    <div class="offers__card-rating-count-review">(30 отзывов)</div>
+                  </div>
+                  <div class="offers__card-cost-inner">
+                    <div class="offers__card-city-box">
+                      <img class="offers__card-city-icon" src="assets/spin.svg" alt="">
+                      <span>Приозерск</span>
+                    </div>
+                    <div class="offers__card-cost-box">
+                      15 300р./
+                      <span>за ночь</span>
+                    </div>
+                  </div>
+                  <div class="offers__card-arrow">
+                    <svg class="offers__card-arrow-icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.3848 0.999989C20.3848 0.447705 19.9371 -1.0632e-05 19.3848 -1.08849e-05L10.3848 -1.00841e-05C9.83249 -1.04213e-05 9.38478 0.447705 9.38478 0.99999C9.38478 1.55227 9.83249 1.99999 10.3848 1.99999L18.3848 1.99999L18.3848 9.99999C18.3848 10.5523 18.8325 11 19.3848 11C19.9371 11 20.3848 10.5523 20.3848 9.99999L20.3848 0.999989ZM1.70711 20.0919L20.0919 1.7071L18.6777 0.292883L0.292893 18.6777L1.70711 20.0919Z" fill="#0C131D"/>
+                    </svg>
+                  </div>
+                  <div class="offers__card-like">
+                    <svg class="offers__card-like-icon" width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.85 15.9543C9.56666 16.0543 9.1 16.0543 8.81667 15.9543C6.4 15.1293 1 11.6876 1 5.85432C1 3.27932 3.075 1.19598 5.63333 1.19598C7.15 1.19598 8.49167 1.92932 9.33333 3.06265C9.76148 2.48421 10.3191 2.01409 10.9617 1.68994C11.6042 1.36579 12.3137 1.19662 13.0333 1.19598C15.5917 1.19598 17.6667 3.27932 17.6667 5.85432C17.6667 11.6876 12.2667 15.1293 9.85 15.9543Z" fill="#9EA9B7" stroke="#9EA9B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="offers__card">
+              <a class="offers__card-link" href="">
+                <div class="offers__card-img-box">
+                  <img class="offers__card-img" src="assets/4.jpg" alt="">
+                </div>
+                <div class="offers__card-info">
+                  <p class="offers__card-name">Домик у озера</p>
+                  <div class="offers__card-rating-box">
+                    <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.02229 2.04591C6.16748 1.57607 6.83252 1.57607 6.97771 2.04591L7.92555 5.11318C7.99029 5.32268 8.18398 5.46556 8.40326 5.46556H11.5219C12.0001 5.46556 12.2054 6.07255 11.8254 6.36289L9.25993 8.32272C9.09342 8.44992 9.02388 8.66746 9.08575 8.86767L10.0554 12.0054C10.1991 12.4705 9.66097 12.8459 9.27412 12.5504L6.80353 10.663C6.62433 10.5261 6.37567 10.5261 6.19647 10.663L3.72588 12.5504C3.33903 12.8459 2.80091 12.4705 2.94463 12.0054L3.91425 8.86767C3.97611 8.66746 3.90658 8.44992 3.74007 8.32272L1.17462 6.36289C0.794561 6.07255 0.999881 5.46556 1.47815 5.46556H4.59674C4.81602 5.46556 5.00971 5.32268 5.07445 5.11318L6.02229 2.04591Z" fill="#F4AE43"/>
+                    </svg>
+                    <div class="offers__card-rating-num">4.8</div>
+                    <div class="offers__card-rating-count-review">(30 отзывов)</div>
+                  </div>
+                  <div class="offers__card-cost-inner">
+                    <div class="offers__card-city-box">
+                      <img class="offers__card-city-icon" src="assets/spin.svg" alt="">
+                      <span>Приозерск</span>
+                    </div>
+                    <div class="offers__card-cost-box">
+                      15 300р./
+                      <span>за ночь</span>
+                    </div>
+                  </div>
+                  <div class="offers__card-arrow">
+                    <svg class="offers__card-arrow-icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.3848 0.999989C20.3848 0.447705 19.9371 -1.0632e-05 19.3848 -1.08849e-05L10.3848 -1.00841e-05C9.83249 -1.04213e-05 9.38478 0.447705 9.38478 0.99999C9.38478 1.55227 9.83249 1.99999 10.3848 1.99999L18.3848 1.99999L18.3848 9.99999C18.3848 10.5523 18.8325 11 19.3848 11C19.9371 11 20.3848 10.5523 20.3848 9.99999L20.3848 0.999989ZM1.70711 20.0919L20.0919 1.7071L18.6777 0.292883L0.292893 18.6777L1.70711 20.0919Z" fill="#0C131D"/>
+                    </svg>
+                  </div>
+                  <div class="offers__card-like">
+                    <svg class="offers__card-like-icon" width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.85 15.9543C9.56666 16.0543 9.1 16.0543 8.81667 15.9543C6.4 15.1293 1 11.6876 1 5.85432C1 3.27932 3.075 1.19598 5.63333 1.19598C7.15 1.19598 8.49167 1.92932 9.33333 3.06265C9.76148 2.48421 10.3191 2.01409 10.9617 1.68994C11.6042 1.36579 12.3137 1.19662 13.0333 1.19598C15.5917 1.19598 17.6667 3.27932 17.6667 5.85432C17.6667 11.6876 12.2667 15.1293 9.85 15.9543Z" fill="#9EA9B7" stroke="#9EA9B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="offers__card">
+              <a class="offers__card-link" href="">
+                <div class="offers__card-img-box">
+                  <img class="offers__card-img" src="assets/5.jpg" alt="">
+                </div>
+                <div class="offers__card-info">
+                  <p class="offers__card-name">Домик у озера</p>
+                  <div class="offers__card-rating-box">
+                    <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.02229 2.04591C6.16748 1.57607 6.83252 1.57607 6.97771 2.04591L7.92555 5.11318C7.99029 5.32268 8.18398 5.46556 8.40326 5.46556H11.5219C12.0001 5.46556 12.2054 6.07255 11.8254 6.36289L9.25993 8.32272C9.09342 8.44992 9.02388 8.66746 9.08575 8.86767L10.0554 12.0054C10.1991 12.4705 9.66097 12.8459 9.27412 12.5504L6.80353 10.663C6.62433 10.5261 6.37567 10.5261 6.19647 10.663L3.72588 12.5504C3.33903 12.8459 2.80091 12.4705 2.94463 12.0054L3.91425 8.86767C3.97611 8.66746 3.90658 8.44992 3.74007 8.32272L1.17462 6.36289C0.794561 6.07255 0.999881 5.46556 1.47815 5.46556H4.59674C4.81602 5.46556 5.00971 5.32268 5.07445 5.11318L6.02229 2.04591Z" fill="#F4AE43"/>
+                    </svg>
+                    <div class="offers__card-rating-num">4.8</div>
+                    <div class="offers__card-rating-count-review">(30 отзывов)</div>
+                  </div>
+                  <div class="offers__card-cost-inner">
+                    <div class="offers__card-city-box">
+                      <img class="offers__card-city-icon" src="assets/spin.svg" alt="">
+                      <span>Приозерск</span>
+                    </div>
+                    <div class="offers__card-cost-box">
+                      15 300р./
+                      <span>за ночь</span>
+                    </div>
+                  </div>
+                  <div class="offers__card-arrow">
+                    <svg class="offers__card-arrow-icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.3848 0.999989C20.3848 0.447705 19.9371 -1.0632e-05 19.3848 -1.08849e-05L10.3848 -1.00841e-05C9.83249 -1.04213e-05 9.38478 0.447705 9.38478 0.99999C9.38478 1.55227 9.83249 1.99999 10.3848 1.99999L18.3848 1.99999L18.3848 9.99999C18.3848 10.5523 18.8325 11 19.3848 11C19.9371 11 20.3848 10.5523 20.3848 9.99999L20.3848 0.999989ZM1.70711 20.0919L20.0919 1.7071L18.6777 0.292883L0.292893 18.6777L1.70711 20.0919Z" fill="#0C131D"/>
+                    </svg>
+                  </div>
+                  <div class="offers__card-like">
+                    <svg class="offers__card-like-icon" width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.85 15.9543C9.56666 16.0543 9.1 16.0543 8.81667 15.9543C6.4 15.1293 1 11.6876 1 5.85432C1 3.27932 3.075 1.19598 5.63333 1.19598C7.15 1.19598 8.49167 1.92932 9.33333 3.06265C9.76148 2.48421 10.3191 2.01409 10.9617 1.68994C11.6042 1.36579 12.3137 1.19662 13.0333 1.19598C15.5917 1.19598 17.6667 3.27932 17.6667 5.85432C17.6667 11.6876 12.2667 15.1293 9.85 15.9543Z" fill="#9EA9B7" stroke="#9EA9B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="offers__card">
+              <a class="offers__card-link" href="">
+                <div class="offers__card-img-box">
+                  <img class="offers__card-img" src="assets/6.jpg" alt="">
+                </div>
+                <div class="offers__card-info">
+                  <p class="offers__card-name">Домик у озера</p>
+                  <div class="offers__card-rating-box">
+                    <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.02229 2.04591C6.16748 1.57607 6.83252 1.57607 6.97771 2.04591L7.92555 5.11318C7.99029 5.32268 8.18398 5.46556 8.40326 5.46556H11.5219C12.0001 5.46556 12.2054 6.07255 11.8254 6.36289L9.25993 8.32272C9.09342 8.44992 9.02388 8.66746 9.08575 8.86767L10.0554 12.0054C10.1991 12.4705 9.66097 12.8459 9.27412 12.5504L6.80353 10.663C6.62433 10.5261 6.37567 10.5261 6.19647 10.663L3.72588 12.5504C3.33903 12.8459 2.80091 12.4705 2.94463 12.0054L3.91425 8.86767C3.97611 8.66746 3.90658 8.44992 3.74007 8.32272L1.17462 6.36289C0.794561 6.07255 0.999881 5.46556 1.47815 5.46556H4.59674C4.81602 5.46556 5.00971 5.32268 5.07445 5.11318L6.02229 2.04591Z" fill="#F4AE43"/>
+                    </svg>
+                    <div class="offers__card-rating-num">4.8</div>
+                    <div class="offers__card-rating-count-review">(30 отзывов)</div>
+                  </div>
+                  <div class="offers__card-cost-inner">
+                    <div class="offers__card-city-box">
+                      <img class="offers__card-city-icon" src="assets/spin.svg" alt="">
+                      <span>Приозерск</span>
+                    </div>
+                    <div class="offers__card-cost-box">
+                      15 300р./
+                      <span>за ночь</span>
+                    </div>
+                  </div>
+                  <div class="offers__card-arrow">
+                    <svg class="offers__card-arrow-icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.3848 0.999989C20.3848 0.447705 19.9371 -1.0632e-05 19.3848 -1.08849e-05L10.3848 -1.00841e-05C9.83249 -1.04213e-05 9.38478 0.447705 9.38478 0.99999C9.38478 1.55227 9.83249 1.99999 10.3848 1.99999L18.3848 1.99999L18.3848 9.99999C18.3848 10.5523 18.8325 11 19.3848 11C19.9371 11 20.3848 10.5523 20.3848 9.99999L20.3848 0.999989ZM1.70711 20.0919L20.0919 1.7071L18.6777 0.292883L0.292893 18.6777L1.70711 20.0919Z" fill="#0C131D"/>
+                    </svg>
+                  </div>
+                  <div class="offers__card-like">
+                    <svg class="offers__card-like-icon" width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.85 15.9543C9.56666 16.0543 9.1 16.0543 8.81667 15.9543C6.4 15.1293 1 11.6876 1 5.85432C1 3.27932 3.075 1.19598 5.63333 1.19598C7.15 1.19598 8.49167 1.92932 9.33333 3.06265C9.76148 2.48421 10.3191 2.01409 10.9617 1.68994C11.6042 1.36579 12.3137 1.19662 13.0333 1.19598C15.5917 1.19598 17.6667 3.27932 17.6667 5.85432C17.6667 11.6876 12.2667 15.1293 9.85 15.9543Z" fill="#9EA9B7" stroke="#9EA9B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="offers__card">
+              <a class="offers__card-link" href="">
+                <div class="offers__card-img-box">
+                  <img class="offers__card-img" src="assets/7.jpg" alt="">
+                </div>
+                <div class="offers__card-info">
+                  <p class="offers__card-name">Домик у озера</p>
+                  <div class="offers__card-rating-box">
+                    <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.02229 2.04591C6.16748 1.57607 6.83252 1.57607 6.97771 2.04591L7.92555 5.11318C7.99029 5.32268 8.18398 5.46556 8.40326 5.46556H11.5219C12.0001 5.46556 12.2054 6.07255 11.8254 6.36289L9.25993 8.32272C9.09342 8.44992 9.02388 8.66746 9.08575 8.86767L10.0554 12.0054C10.1991 12.4705 9.66097 12.8459 9.27412 12.5504L6.80353 10.663C6.62433 10.5261 6.37567 10.5261 6.19647 10.663L3.72588 12.5504C3.33903 12.8459 2.80091 12.4705 2.94463 12.0054L3.91425 8.86767C3.97611 8.66746 3.90658 8.44992 3.74007 8.32272L1.17462 6.36289C0.794561 6.07255 0.999881 5.46556 1.47815 5.46556H4.59674C4.81602 5.46556 5.00971 5.32268 5.07445 5.11318L6.02229 2.04591Z" fill="#F4AE43"/>
+                    </svg>
+                    <div class="offers__card-rating-num">4.8</div>
+                    <div class="offers__card-rating-count-review">(30 отзывов)</div>
+                  </div>
+                  <div class="offers__card-cost-inner">
+                    <div class="offers__card-city-box">
+                      <img class="offers__card-city-icon" src="assets/spin.svg" alt="">
+                      <span>Приозерск</span>
+                    </div>
+                    <div class="offers__card-cost-box">
+                      15 300р./
+                      <span>за ночь</span>
+                    </div>
+                  </div>
+                  <div class="offers__card-arrow">
+                    <svg class="offers__card-arrow-icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.3848 0.999989C20.3848 0.447705 19.9371 -1.0632e-05 19.3848 -1.08849e-05L10.3848 -1.00841e-05C9.83249 -1.04213e-05 9.38478 0.447705 9.38478 0.99999C9.38478 1.55227 9.83249 1.99999 10.3848 1.99999L18.3848 1.99999L18.3848 9.99999C18.3848 10.5523 18.8325 11 19.3848 11C19.9371 11 20.3848 10.5523 20.3848 9.99999L20.3848 0.999989ZM1.70711 20.0919L20.0919 1.7071L18.6777 0.292883L0.292893 18.6777L1.70711 20.0919Z" fill="#0C131D"/>
+                    </svg>
+                  </div>
+                  <div class="offers__card-like">
+                    <svg class="offers__card-like-icon" width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.85 15.9543C9.56666 16.0543 9.1 16.0543 8.81667 15.9543C6.4 15.1293 1 11.6876 1 5.85432C1 3.27932 3.075 1.19598 5.63333 1.19598C7.15 1.19598 8.49167 1.92932 9.33333 3.06265C9.76148 2.48421 10.3191 2.01409 10.9617 1.68994C11.6042 1.36579 12.3137 1.19662 13.0333 1.19598C15.5917 1.19598 17.6667 3.27932 17.6667 5.85432C17.6667 11.6876 12.2667 15.1293 9.85 15.9543Z" fill="#9EA9B7" stroke="#9EA9B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="offers__card">
+              <a class="offers__card-link" href="">
+                <div class="offers__card-img-box">
+                  <img class="offers__card-img" src="assets/8.jpg" alt="">
+                </div>
+                <div class="offers__card-info">
+                  <p class="offers__card-name">Домик у озера</p>
+                  <div class="offers__card-rating-box">
+                    <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.02229 2.04591C6.16748 1.57607 6.83252 1.57607 6.97771 2.04591L7.92555 5.11318C7.99029 5.32268 8.18398 5.46556 8.40326 5.46556H11.5219C12.0001 5.46556 12.2054 6.07255 11.8254 6.36289L9.25993 8.32272C9.09342 8.44992 9.02388 8.66746 9.08575 8.86767L10.0554 12.0054C10.1991 12.4705 9.66097 12.8459 9.27412 12.5504L6.80353 10.663C6.62433 10.5261 6.37567 10.5261 6.19647 10.663L3.72588 12.5504C3.33903 12.8459 2.80091 12.4705 2.94463 12.0054L3.91425 8.86767C3.97611 8.66746 3.90658 8.44992 3.74007 8.32272L1.17462 6.36289C0.794561 6.07255 0.999881 5.46556 1.47815 5.46556H4.59674C4.81602 5.46556 5.00971 5.32268 5.07445 5.11318L6.02229 2.04591Z" fill="#F4AE43"/>
+                    </svg>
+                    <div class="offers__card-rating-num">4.8</div>
+                    <div class="offers__card-rating-count-review">(30 отзывов)</div>
+                  </div>
+                  <div class="offers__card-cost-inner">
+                    <div class="offers__card-city-box">
+                      <img class="offers__card-city-icon" src="assets/spin.svg" alt="">
+                      <span>Приозерск</span>
+                    </div>
+                    <div class="offers__card-cost-box">
+                      15 300р./
+                      <span>за ночь</span>
+                    </div>
+                  </div>
+                  <div class="offers__card-arrow">
+                    <svg class="offers__card-arrow-icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.3848 0.999989C20.3848 0.447705 19.9371 -1.0632e-05 19.3848 -1.08849e-05L10.3848 -1.00841e-05C9.83249 -1.04213e-05 9.38478 0.447705 9.38478 0.99999C9.38478 1.55227 9.83249 1.99999 10.3848 1.99999L18.3848 1.99999L18.3848 9.99999C18.3848 10.5523 18.8325 11 19.3848 11C19.9371 11 20.3848 10.5523 20.3848 9.99999L20.3848 0.999989ZM1.70711 20.0919L20.0919 1.7071L18.6777 0.292883L0.292893 18.6777L1.70711 20.0919Z" fill="#0C131D"/>
+                    </svg>
+                  </div>
+                  <div class="offers__card-like">
+                    <svg class="offers__card-like-icon" width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.85 15.9543C9.56666 16.0543 9.1 16.0543 8.81667 15.9543C6.4 15.1293 1 11.6876 1 5.85432C1 3.27932 3.075 1.19598 5.63333 1.19598C7.15 1.19598 8.49167 1.92932 9.33333 3.06265C9.76148 2.48421 10.3191 2.01409 10.9617 1.68994C11.6042 1.36579 12.3137 1.19662 13.0333 1.19598C15.5917 1.19598 17.6667 3.27932 17.6667 5.85432C17.6667 11.6876 12.2667 15.1293 9.85 15.9543Z" fill="#9EA9B7" stroke="#9EA9B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="offers__card">
+              <a class="offers__card-link" href="">
+                <div class="offers__card-img-box">
+                  <img class="offers__card-img" src="assets/9.jpg" alt="">
+                </div>
+                <div class="offers__card-info">
+                  <p class="offers__card-name">Домик у озера</p>
+                  <div class="offers__card-rating-box">
+                    <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.02229 2.04591C6.16748 1.57607 6.83252 1.57607 6.97771 2.04591L7.92555 5.11318C7.99029 5.32268 8.18398 5.46556 8.40326 5.46556H11.5219C12.0001 5.46556 12.2054 6.07255 11.8254 6.36289L9.25993 8.32272C9.09342 8.44992 9.02388 8.66746 9.08575 8.86767L10.0554 12.0054C10.1991 12.4705 9.66097 12.8459 9.27412 12.5504L6.80353 10.663C6.62433 10.5261 6.37567 10.5261 6.19647 10.663L3.72588 12.5504C3.33903 12.8459 2.80091 12.4705 2.94463 12.0054L3.91425 8.86767C3.97611 8.66746 3.90658 8.44992 3.74007 8.32272L1.17462 6.36289C0.794561 6.07255 0.999881 5.46556 1.47815 5.46556H4.59674C4.81602 5.46556 5.00971 5.32268 5.07445 5.11318L6.02229 2.04591Z" fill="#F4AE43"/>
+                    </svg>
+                    <div class="offers__card-rating-num">4.8</div>
+                    <div class="offers__card-rating-count-review">(30 отзывов)</div>
+                  </div>
+                  <div class="offers__card-cost-inner">
+                    <div class="offers__card-city-box">
+                      <img class="offers__card-city-icon" src="assets/spin.svg" alt="">
+                      <span>Приозерск</span>
+                    </div>
+                    <div class="offers__card-cost-box">
+                      15 300р./
+                      <span>за ночь</span>
+                    </div>
+                  </div>
+                  <div class="offers__card-arrow">
+                    <svg class="offers__card-arrow-icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.3848 0.999989C20.3848 0.447705 19.9371 -1.0632e-05 19.3848 -1.08849e-05L10.3848 -1.00841e-05C9.83249 -1.04213e-05 9.38478 0.447705 9.38478 0.99999C9.38478 1.55227 9.83249 1.99999 10.3848 1.99999L18.3848 1.99999L18.3848 9.99999C18.3848 10.5523 18.8325 11 19.3848 11C19.9371 11 20.3848 10.5523 20.3848 9.99999L20.3848 0.999989ZM1.70711 20.0919L20.0919 1.7071L18.6777 0.292883L0.292893 18.6777L1.70711 20.0919Z" fill="#0C131D"/>
+                    </svg>
+                  </div>
+                  <div class="offers__card-like">
+                    <svg class="offers__card-like-icon" width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.85 15.9543C9.56666 16.0543 9.1 16.0543 8.81667 15.9543C6.4 15.1293 1 11.6876 1 5.85432C1 3.27932 3.075 1.19598 5.63333 1.19598C7.15 1.19598 8.49167 1.92932 9.33333 3.06265C9.76148 2.48421 10.3191 2.01409 10.9617 1.68994C11.6042 1.36579 12.3137 1.19662 13.0333 1.19598C15.5917 1.19598 17.6667 3.27932 17.6667 5.85432C17.6667 11.6876 12.2667 15.1293 9.85 15.9543Z" fill="#9EA9B7" stroke="#9EA9B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="offers__card">
+              <a class="offers__card-link" href="">
+                <div class="offers__card-img-box">
+                  <img class="offers__card-img" src="assets/10.jpg" alt="">
+                </div>
+                <div class="offers__card-info">
+                  <p class="offers__card-name">Домик у озера</p>
+                  <div class="offers__card-rating-box">
+                    <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.02229 2.04591C6.16748 1.57607 6.83252 1.57607 6.97771 2.04591L7.92555 5.11318C7.99029 5.32268 8.18398 5.46556 8.40326 5.46556H11.5219C12.0001 5.46556 12.2054 6.07255 11.8254 6.36289L9.25993 8.32272C9.09342 8.44992 9.02388 8.66746 9.08575 8.86767L10.0554 12.0054C10.1991 12.4705 9.66097 12.8459 9.27412 12.5504L6.80353 10.663C6.62433 10.5261 6.37567 10.5261 6.19647 10.663L3.72588 12.5504C3.33903 12.8459 2.80091 12.4705 2.94463 12.0054L3.91425 8.86767C3.97611 8.66746 3.90658 8.44992 3.74007 8.32272L1.17462 6.36289C0.794561 6.07255 0.999881 5.46556 1.47815 5.46556H4.59674C4.81602 5.46556 5.00971 5.32268 5.07445 5.11318L6.02229 2.04591Z" fill="#F4AE43"/>
+                    </svg>
+                    <div class="offers__card-rating-num">4.8</div>
+                    <div class="offers__card-rating-count-review">(30 отзывов)</div>
+                  </div>
+                  <div class="offers__card-cost-inner">
+                    <div class="offers__card-city-box">
+                      <img class="offers__card-city-icon" src="assets/spin.svg" alt="">
+                      <span>Приозерск</span>
+                    </div>
+                    <div class="offers__card-cost-box">
+                      15 300р./
+                      <span>за ночь</span>
+                    </div>
+                  </div>
+                  <div class="offers__card-arrow">
+                    <svg class="offers__card-arrow-icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.3848 0.999989C20.3848 0.447705 19.9371 -1.0632e-05 19.3848 -1.08849e-05L10.3848 -1.00841e-05C9.83249 -1.04213e-05 9.38478 0.447705 9.38478 0.99999C9.38478 1.55227 9.83249 1.99999 10.3848 1.99999L18.3848 1.99999L18.3848 9.99999C18.3848 10.5523 18.8325 11 19.3848 11C19.9371 11 20.3848 10.5523 20.3848 9.99999L20.3848 0.999989ZM1.70711 20.0919L20.0919 1.7071L18.6777 0.292883L0.292893 18.6777L1.70711 20.0919Z" fill="#0C131D"/>
+                    </svg>
+                  </div>
+                  <div class="offers__card-like">
+                    <svg class="offers__card-like-icon" width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.85 15.9543C9.56666 16.0543 9.1 16.0543 8.81667 15.9543C6.4 15.1293 1 11.6876 1 5.85432C1 3.27932 3.075 1.19598 5.63333 1.19598C7.15 1.19598 8.49167 1.92932 9.33333 3.06265C9.76148 2.48421 10.3191 2.01409 10.9617 1.68994C11.6042 1.36579 12.3137 1.19662 13.0333 1.19598C15.5917 1.19598 17.6667 3.27932 17.6667 5.85432C17.6667 11.6876 12.2667 15.1293 9.85 15.9543Z" fill="#9EA9B7" stroke="#9EA9B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="offers__card">
+              <a class="offers__card-link" href="">
+                <div class="offers__card-img-box">
+                  <img class="offers__card-img" src="assets/11.jpg" alt="">
+                </div>
+                <div class="offers__card-info">
+                  <p class="offers__card-name">Домик у озера</p>
+                  <div class="offers__card-rating-box">
+                    <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.02229 2.04591C6.16748 1.57607 6.83252 1.57607 6.97771 2.04591L7.92555 5.11318C7.99029 5.32268 8.18398 5.46556 8.40326 5.46556H11.5219C12.0001 5.46556 12.2054 6.07255 11.8254 6.36289L9.25993 8.32272C9.09342 8.44992 9.02388 8.66746 9.08575 8.86767L10.0554 12.0054C10.1991 12.4705 9.66097 12.8459 9.27412 12.5504L6.80353 10.663C6.62433 10.5261 6.37567 10.5261 6.19647 10.663L3.72588 12.5504C3.33903 12.8459 2.80091 12.4705 2.94463 12.0054L3.91425 8.86767C3.97611 8.66746 3.90658 8.44992 3.74007 8.32272L1.17462 6.36289C0.794561 6.07255 0.999881 5.46556 1.47815 5.46556H4.59674C4.81602 5.46556 5.00971 5.32268 5.07445 5.11318L6.02229 2.04591Z" fill="#F4AE43"/>
+                    </svg>
+                    <div class="offers__card-rating-num">4.8</div>
+                    <div class="offers__card-rating-count-review">(30 отзывов)</div>
+                  </div>
+                  <div class="offers__card-cost-inner">
+                    <div class="offers__card-city-box">
+                      <img class="offers__card-city-icon" src="assets/spin.svg" alt="">
+                      <span>Приозерск</span>
+                    </div>
+                    <div class="offers__card-cost-box">
+                      15 300р./
+                      <span>за ночь</span>
+                    </div>
+                  </div>
+                  <div class="offers__card-arrow">
+                    <svg class="offers__card-arrow-icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.3848 0.999989C20.3848 0.447705 19.9371 -1.0632e-05 19.3848 -1.08849e-05L10.3848 -1.00841e-05C9.83249 -1.04213e-05 9.38478 0.447705 9.38478 0.99999C9.38478 1.55227 9.83249 1.99999 10.3848 1.99999L18.3848 1.99999L18.3848 9.99999C18.3848 10.5523 18.8325 11 19.3848 11C19.9371 11 20.3848 10.5523 20.3848 9.99999L20.3848 0.999989ZM1.70711 20.0919L20.0919 1.7071L18.6777 0.292883L0.292893 18.6777L1.70711 20.0919Z" fill="#0C131D"/>
+                    </svg>
+                  </div>
+                  <div class="offers__card-like">
+                    <svg class="offers__card-like-icon" width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.85 15.9543C9.56666 16.0543 9.1 16.0543 8.81667 15.9543C6.4 15.1293 1 11.6876 1 5.85432C1 3.27932 3.075 1.19598 5.63333 1.19598C7.15 1.19598 8.49167 1.92932 9.33333 3.06265C9.76148 2.48421 10.3191 2.01409 10.9617 1.68994C11.6042 1.36579 12.3137 1.19662 13.0333 1.19598C15.5917 1.19598 17.6667 3.27932 17.6667 5.85432C17.6667 11.6876 12.2667 15.1293 9.85 15.9543Z" fill="#9EA9B7" stroke="#9EA9B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="offers__card">
+              <a class="offers__card-link" href="">
+                <div class="offers__card-img-box">
+                  <img class="offers__card-img" src="assets/12.jpg" alt="">
+                </div>
+                <div class="offers__card-info">
+                  <p class="offers__card-name">Домик у озера</p>
+                  <div class="offers__card-rating-box">
+                    <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.02229 2.04591C6.16748 1.57607 6.83252 1.57607 6.97771 2.04591L7.92555 5.11318C7.99029 5.32268 8.18398 5.46556 8.40326 5.46556H11.5219C12.0001 5.46556 12.2054 6.07255 11.8254 6.36289L9.25993 8.32272C9.09342 8.44992 9.02388 8.66746 9.08575 8.86767L10.0554 12.0054C10.1991 12.4705 9.66097 12.8459 9.27412 12.5504L6.80353 10.663C6.62433 10.5261 6.37567 10.5261 6.19647 10.663L3.72588 12.5504C3.33903 12.8459 2.80091 12.4705 2.94463 12.0054L3.91425 8.86767C3.97611 8.66746 3.90658 8.44992 3.74007 8.32272L1.17462 6.36289C0.794561 6.07255 0.999881 5.46556 1.47815 5.46556H4.59674C4.81602 5.46556 5.00971 5.32268 5.07445 5.11318L6.02229 2.04591Z" fill="#F4AE43"/>
+                    </svg>
+                    <div class="offers__card-rating-num">4.8</div>
+                    <div class="offers__card-rating-count-review">(30 отзывов)</div>
+                  </div>
+                  <div class="offers__card-cost-inner">
+                    <div class="offers__card-city-box">
+                      <img class="offers__card-city-icon" src="assets/spin.svg" alt="">
+                      <span>Приозерск</span>
+                    </div>
+                    <div class="offers__card-cost-box">
+                      15 300р./
+                      <span>за ночь</span>
+                    </div>
+                  </div>
+                  <div class="offers__card-arrow">
+                    <svg class="offers__card-arrow-icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.3848 0.999989C20.3848 0.447705 19.9371 -1.0632e-05 19.3848 -1.08849e-05L10.3848 -1.00841e-05C9.83249 -1.04213e-05 9.38478 0.447705 9.38478 0.99999C9.38478 1.55227 9.83249 1.99999 10.3848 1.99999L18.3848 1.99999L18.3848 9.99999C18.3848 10.5523 18.8325 11 19.3848 11C19.9371 11 20.3848 10.5523 20.3848 9.99999L20.3848 0.999989ZM1.70711 20.0919L20.0919 1.7071L18.6777 0.292883L0.292893 18.6777L1.70711 20.0919Z" fill="#0C131D"/>
+                    </svg>
+                  </div>
+                  <div class="offers__card-like">
+                    <svg class="offers__card-like-icon" width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.85 15.9543C9.56666 16.0543 9.1 16.0543 8.81667 15.9543C6.4 15.1293 1 11.6876 1 5.85432C1 3.27932 3.075 1.19598 5.63333 1.19598C7.15 1.19598 8.49167 1.92932 9.33333 3.06265C9.76148 2.48421 10.3191 2.01409 10.9617 1.68994C11.6042 1.36579 12.3137 1.19662 13.0333 1.19598C15.5917 1.19598 17.6667 3.27932 17.6667 5.85432C17.6667 11.6876 12.2667 15.1293 9.85 15.9543Z" fill="#9EA9B7" stroke="#9EA9B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <button class="offers__cards-btn tr-btn">Показать еще</button>
+        </div>
+      </div>
+    </section>
+    <section class="descr">
+      <div class="container">
+        <div class="descr__wrapper">
+          <div class="descr__logo-box">
+            <p class="descr__logo">LuxeRent</p>
+          </div>
+          <div class="descr__inner">
+            <p class="descr__text">Это сервис, помогающий арендовать качественное жилье для отдыха загородом. В каталоге домов вы найдете дома под любой вкус. У нас представлены дома Шале, Фахверк, Хай-Тек, Барнхаус, Глэмпинг. Работаем только с ответственными арендодателями. </p>
+            <p class="descr__text">Это сервис, помогающий арендовать качественное жилье для отдыха загородом. В каталоге домов вы найдете дома под любой вкус. У нас представлены дома Шале, Фахверк, Хай-Тек, Барнхаус, Глэмпинг. Работаем только с ответственными арендодателями. </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="advantages">
+      <div class="advantages__wrapper">
+        <div class="advantages__items">
+          <div class="advantages__item advantages__item-1">
+            <p class="advantages__item-text"><span>Дома комфорт-класса</span> и выше</p>
+            <div class="advantages__item-img-box">
+              <div class="advantages__item-gradient"></div>
+              <img alt="" class="advantages__item-img" src="assets/adv-1.jpg">
+            </div>
+          </div>
+          <div class="advantages__item advantages__item-2">
+            <p class="advantages__item-text"><span>Быстрый выбор из</span> качественной базы жилья</p>
+            <div class="advantages__item-img-box">
+              <div class="advantages__item-gradient"></div>
+              <img alt="" class="advantages__item-img" src="assets/adv-2.jpg">
+            </div>
+          </div>
+          <div class="advantages__item advantages__item-3">
+            <p class="advantages__item-text"><span>Простая система</span> бронирования</p>
+            <div class="advantages__item-img-box">
+              <div class="advantages__item-gradient"></div>
+              <img alt="" class="advantages__item-img" src="assets/adv-3.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrapper">
+        <div class="footer__links">
+          <a class="footer__link" href="#">© 2023 LuxeRent</a>
+          <a class="footer__link" href="#">Конфиденциальность</a>
+          <a class="footer__link" href="#">Условия</a>
+          <a class="footer__link" href="#">Реквизиты компании</a>
+          <a class="footer__link" href="#">Поддержка</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</html>
